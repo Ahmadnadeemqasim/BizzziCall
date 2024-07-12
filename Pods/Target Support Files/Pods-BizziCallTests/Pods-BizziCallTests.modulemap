@@ -1,0 +1,6 @@
+framework module Pods_BizziCallTests {
+  umbrella header "Pods-BizziCallTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
