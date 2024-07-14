@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="orb-HK-c9b">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -1243,15 +1244,21 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejW-Dh-udg">
                                 <rect key="frame" x="0.0" y="552" width="393" height="300"/>
                                 <subviews>
-                                    <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yo-7l-MYR">
+                                    <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yo-7l-MYR">
                                         <rect key="frame" x="24" y="72.666666666666629" width="345" height="127.33333333333331"/>
                                         <color key="backgroundColor" name="AppBasicColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="Zoe-gm-RWR"/>
                                         </constraints>
-                                        <string key="text">Your accounnt deleted permanently. Including your contacts and history from the application. You won't be able to retrieve your data.You have to create a new account if you want to continue using mBizzi.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <string key="content">Your accounnt deleted permanently. Including your contacts and history from the application. You won't be able to retrieve your data.You have to create a new account if you want to continue using mBizzi.</string>
+                                                <attributes>
+                                                    <font key="NSFont" size="16" name="Lato-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -2660,7 +2667,7 @@
                                     <constraint firstAttribute="height" constant="0.5" id="IXi-iS-J5M"/>
                                 </constraints>
                             </view>
-                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EbM-te-dEf">
+                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EbM-te-dEf">
                                 <rect key="frame" x="24" y="129.66666666666669" width="345" height="688.33333333333326"/>
                                 <color key="backgroundColor" name="AppBasicColor"/>
                                 <sections/>
@@ -4088,6 +4095,9 @@
                                     <color key="tintColor" systemColor="labelColor"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="menu"/>
+                                    <connections>
+                                        <action selector="btnMenuTapped:" destination="XWq-lT-Esi" eventType="touchUpInside" id="cwX-Uq-MRN"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <viewLayoutGuide key="safeArea" id="Hex-a6-1Xa"/>
@@ -4105,16 +4115,16 @@
                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y1L-A8-66H">
                                     <rect key="frame" x="0.0" y="180" width="290" height="70"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark.bin.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ixQ-C2-VrT">
-                                            <rect key="frame" x="24" y="19.333333333333321" width="30" height="32"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete" translatesAutoresizingMaskIntoConstraints="NO" id="ixQ-C2-VrT">
+                                            <rect key="frame" x="24" y="23" width="22" height="24"/>
                                             <color key="tintColor" systemColor="systemRedColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="DWD-Zx-1Ou"/>
-                                                <constraint firstAttribute="height" constant="35" id="szL-4r-tqg"/>
+                                                <constraint firstAttribute="width" constant="22" id="DWD-Zx-1Ou"/>
+                                                <constraint firstAttribute="height" constant="24" id="szL-4r-tqg"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remove Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycq-wz-fWU">
-                                            <rect key="frame" x="80" y="17.666666666666657" width="186" height="35"/>
+                                            <rect key="frame" x="64" y="23" width="202" height="24"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                             <color key="textColor" systemColor="systemRedColor"/>
                                             <nil key="highlightedColor"/>
@@ -4128,7 +4138,7 @@
                                         <constraint firstItem="ixQ-C2-VrT" firstAttribute="centerY" secondItem="Y1L-A8-66H" secondAttribute="centerY" id="Jth-Mm-cGe"/>
                                         <constraint firstItem="ixQ-C2-VrT" firstAttribute="leading" secondItem="Y1L-A8-66H" secondAttribute="leading" constant="24" id="bVe-km-n47"/>
                                         <constraint firstItem="ycq-wz-fWU" firstAttribute="bottom" secondItem="ixQ-C2-VrT" secondAttribute="bottom" id="tIz-cf-wUb"/>
-                                        <constraint firstItem="ycq-wz-fWU" firstAttribute="leading" secondItem="ixQ-C2-VrT" secondAttribute="trailing" constant="26" id="wN3-n6-Mbv"/>
+                                        <constraint firstItem="ycq-wz-fWU" firstAttribute="leading" secondItem="ixQ-C2-VrT" secondAttribute="trailing" constant="18" id="wN3-n6-Mbv"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -4463,9 +4473,6 @@
         <designable name="Hcb-FX-gfV">
             <size key="intrinsicContentSize" width="128.33333333333334" height="30.333333333333332"/>
         </designable>
-        <designable name="HrJ-tH-Vqt">
-            <size key="intrinsicContentSize" width="80.666666666666671" height="30.333333333333332"/>
-        </designable>
         <designable name="I54-vL-Tsa">
             <size key="intrinsicContentSize" width="87" height="30.333333333333332"/>
         </designable>
@@ -4510,9 +4517,6 @@
         </designable>
         <designable name="Vcc-TH-gyc">
             <size key="intrinsicContentSize" width="73.333333333333329" height="30.333333333333332"/>
-        </designable>
-        <designable name="Ygf-sO-s2i">
-            <size key="intrinsicContentSize" width="67.666666666666671" height="30.333333333333332"/>
         </designable>
         <designable name="aTf-bW-kt6">
             <size key="intrinsicContentSize" width="71" height="30.333333333333332"/>
@@ -4573,6 +4577,7 @@
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
         <image name="changeNumber" width="22" height="22"/>
         <image name="contacts" width="21.333333969116211" height="22"/>
+        <image name="delete" width="66.333335876464844" height="66.333335876464844"/>
         <image name="history" width="22" height="22"/>
         <image name="menu" width="29.666666030883789" height="20"/>
         <image name="socialMedia" width="25" height="25"/>
@@ -4580,7 +4585,6 @@
         <image name="status" width="22" height="22"/>
         <image name="success" width="93" height="93"/>
         <image name="theme" width="24" height="24"/>
-        <image name="xmark.bin.fill" catalog="system" width="128" height="92"/>
         <namedColor name="AppBasicColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

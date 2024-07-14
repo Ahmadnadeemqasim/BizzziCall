@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class RemoveAccountVC: UIViewController {
 
@@ -31,6 +32,39 @@ class RemoveAccountVC: UIViewController {
     
     @IBAction func btnContinueTapped(_ sender: UIButton) {
         print("---------------continue tapped-----------------")
+        logout()
     }
     
+    func logout() {
+        do {
+            try Auth.auth().signOut()
+            // Successfully signed out
+            // Redirect the user to the login screen or perform any other necessary actions
+            redirectToLoginScreen()
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+            // Handle the error if needed
+        }
+    }
+    
+    func redirectToLoginScreen() {
+        // Assuming you are using a navigation controller
+        UserDefaults.standard.set(false, forKey: "isLoggedIn")
+        UserDefaults.standard.removeObject(forKey: "currentUserNumber")
+        UserDefaults.standard.removeObject(forKey: "authVerificationID")
+        UserDefaults.standard.removeObject(forKey: "currentUserNumber")
+        UserDefaults.standard.set(false, forKey: "permissionsGranted")
+        
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        if let removeAccountVC = storyboard.instantiateViewController(withIdentifier: "PermissionVC") as?  PermissionVC{
+            
+            let navigationController = UINavigationController(rootViewController: removeAccountVC)
+            self.view.window?.rootViewController = navigationController
+            self.view.window?.makeKeyAndVisible()
+            
+            
+        }
+    }
+    
+
 }

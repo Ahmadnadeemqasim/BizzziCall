@@ -11,7 +11,9 @@ import QuartzCore
 class DrawerTVC: UITableViewController {
     
     @IBOutlet weak var vwRemoveAccount: UIView!
- 
+    
+    private var sideMenuViewController: DrawerTVC!
+    private var isSideMenuOpen = false
     private var isDarkModeEnabled: Bool {
         get {
             return UserDefaults.standard.bool(forKey: "isDarkModeEnabled")
@@ -29,7 +31,18 @@ class DrawerTVC: UITableViewController {
         super.viewDidLoad()
         setupGesture()
         setupTableView()
+        checkDarKMode()
         overrideUserInterfaceStyle = isDarkModeEnabled ? .dark : .light
+    }
+    
+    func checkDarKMode() {
+        if traitCollection.userInterfaceStyle == .dark {
+            print("Dark mode is enabled")
+            isDarkModeEnabled = true
+        } else {
+            print("Light mode is enabled")
+            isDarkModeEnabled = false
+        }
     }
     
     
@@ -76,7 +89,12 @@ class DrawerTVC: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ChangeThemeCell", for: indexPath) as! ChangeThemeCell
             cell.lblMenuItem?.text = menuItems[indexPath.row]
             cell.imgMenuItem?.image = UIImage(named:menuItemsImages[indexPath.row])
+            
             cell.lblTheme.text = isDarkModeEnabled ?  "Dark" : "Light"
+            cell.scTheme.onTintColor = .switchTint
+            
+//            cell.scTheme.tintColor = isDarkModeEnabled ? .gradientEnd : .appBasic
+            cell.scTheme.thumbTintColor = .switchThumb // isDarkModeEnabled ? .appBasic : .gradientStart
             cell.delegate = self
             cell.selectionStyle = .none
             return cell
@@ -150,11 +168,30 @@ class DrawerTVC: UITableViewController {
         } else {
             overrideUserInterfaceStyle = .light
         }
-        
+//        toggleSideMenu()
         if let window = UIApplication.shared.windows.first {
             window.overrideUserInterfaceStyle = isDarkModeEnabled ? .dark : .light
         }
     }
+    
+    @IBAction func btnMenuTapped(_ sender: Any) {
+        toggleSideMenu()
+    }
+    
+    private func toggleSideMenu() {
+        UIView.animate(withDuration: 0.3, animations: {
+            if self.isSideMenuOpen {
+                // Hide side menu
+                self.view.frame = CGRect(x: -self.view.frame.width, y: 0, width: self.view.frame.width * 0.8, height: self.view.frame.height)
+            } else {
+                // Show side menu
+                self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width * 0.8, height: self.view.frame.height)
+            }
+        }) { _ in
+            self.isSideMenuOpen.toggle()
+        }
+    }
+
 }
 
 extension DrawerTVC: swithcControlDelegate {

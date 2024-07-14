@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -18,14 +19,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="status" translatesAutoresizingMaskIntoConstraints="NO" id="OZz-8V-XqO">
-                        <rect key="frame" x="20" y="7" width="30" height="30"/>
+                        <rect key="frame" x="24" y="7" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="jST-sR-ggr"/>
                             <constraint firstAttribute="height" constant="30" id="tK3-Hp-1va"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hr5-z6-XnU">
-                        <rect key="frame" x="60" y="7" width="240" height="30"/>
+                        <rect key="frame" x="64" y="7" width="236" height="30"/>
                         <color key="backgroundColor" name="AppBasicColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="Xgx-rd-PAU"/>
@@ -39,7 +40,7 @@
                 <constraints>
                     <constraint firstItem="Hr5-z6-XnU" firstAttribute="bottom" secondItem="OZz-8V-XqO" secondAttribute="bottom" id="6Qk-06-e5m"/>
                     <constraint firstItem="Hr5-z6-XnU" firstAttribute="leading" secondItem="OZz-8V-XqO" secondAttribute="trailing" constant="10" id="HqS-10-IAG"/>
-                    <constraint firstItem="OZz-8V-XqO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Jr8-Tg-z6a"/>
+                    <constraint firstItem="OZz-8V-XqO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="Jr8-Tg-z6a"/>
                     <constraint firstItem="OZz-8V-XqO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="U2h-hb-9ef"/>
                     <constraint firstItem="Hr5-z6-XnU" firstAttribute="top" secondItem="OZz-8V-XqO" secondAttribute="top" id="lzy-fU-Dct"/>
                     <constraint firstAttribute="trailing" secondItem="Hr5-z6-XnU" secondAttribute="trailing" constant="20" id="yH1-kX-iPq"/>

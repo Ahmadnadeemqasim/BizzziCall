@@ -21,9 +21,9 @@ class ChangeThemeCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         scTheme.layer.borderWidth = 1
-        scTheme.layer.cornerRadius = 14.0
+        scTheme.layer.cornerRadius = 16.0
         scTheme.layer.cornerCurve = .continuous
-        scTheme.layer.borderColor = UIColor.textFieldBorder.cgColor
+        scTheme.layer.borderColor = UIColor.lightGray.cgColor
         // Initialization code
     }
 

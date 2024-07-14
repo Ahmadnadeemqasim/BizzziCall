@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -17,16 +18,16 @@
                 <rect key="frame" x="0.0" y="0.0" width="316" height="92"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark.bin.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="AZV-Gl-LnD">
-                        <rect key="frame" x="24" y="30.333333333333329" width="30" height="32"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete" translatesAutoresizingMaskIntoConstraints="NO" id="AZV-Gl-LnD">
+                        <rect key="frame" x="24" y="33.666666666666664" width="30" height="25"/>
                         <color key="tintColor" systemColor="systemRedColor"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="GXb-JZ-qkB"/>
-                            <constraint firstAttribute="height" constant="35" id="nIb-h9-IlA"/>
+                            <constraint firstAttribute="height" constant="25" id="nIb-h9-IlA"/>
                         </constraints>
                     </imageView>
                     <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remove Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tka-j8-ekW">
-                        <rect key="frame" x="64" y="28.666666666666671" width="228" height="35"/>
+                        <rect key="frame" x="64" y="33.666666666666664" width="228" height="25"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                         <color key="textColor" systemColor="systemRedColor"/>
@@ -48,7 +49,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="xmark.bin.fill" catalog="system" width="128" height="92"/>
+        <image name="delete" width="66.333335876464844" height="66.333335876464844"/>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
