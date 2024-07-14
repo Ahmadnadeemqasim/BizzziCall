@@ -9,6 +9,8 @@ import UIKit
 import QuartzCore
 
 class DrawerTVC: UITableViewController {
+    
+    @IBOutlet weak var vwRemoveAccount: UIView!
  
     private var isDarkModeEnabled: Bool {
         get {
@@ -25,12 +27,41 @@ class DrawerTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.register(UINib(nibName: "MenuItemCell", bundle: nil), forCellReuseIdentifier: "MenuItemCell")
-        self.tableView.register(UINib(nibName: "ChangeThemeCell", bundle: nil), forCellReuseIdentifier: "ChangeThemeCell")
-        
-        
+        setupGesture()
+        setupTableView()
         overrideUserInterfaceStyle = isDarkModeEnabled ? .dark : .light
-
+    }
+    
+    
+    func setupGesture() {
+        let removeAccountGesture = UITapGestureRecognizer(target: self, action: #selector(removeAccountTapped))
+        vwRemoveAccount?.addGestureRecognizer(removeAccountGesture)
+        vwRemoveAccount?.isUserInteractionEnabled = true
+    }
+    
+    
+    
+    func setupTableView() {
+        self.tableView.register(UINib(nibName: "MenuItemCell", bundle: nil), forCellReuseIdentifier: "MenuItemCell")
+        self.tableView.register(UINib(nibName: "LogoutCell", bundle: nil), forCellReuseIdentifier: "LogoutCell")
+        self.tableView.register(UINib(nibName: "ChangeThemeCell", bundle: nil), forCellReuseIdentifier: "ChangeThemeCell")
+    }
+    
+    @objc func removeAccountTapped() {
+        presentHalfScreenViewController()
+    }
+    
+    let halfSizeTransitioningDelegate = HalfSizeTransitioningDelegate()
+    
+    func presentHalfScreenViewController() {
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        if let removeAccountVC = storyboard.instantiateViewController(withIdentifier: "RemoveAccountVC") as?  RemoveAccountVC{
+            
+            removeAccountVC.modalPresentationStyle = .custom
+            removeAccountVC.transitioningDelegate = halfSizeTransitioningDelegate
+            present(removeAccountVC, animated: true, completion: nil)
+            
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -45,7 +76,8 @@ class DrawerTVC: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ChangeThemeCell", for: indexPath) as! ChangeThemeCell
             cell.lblMenuItem?.text = menuItems[indexPath.row]
             cell.imgMenuItem?.image = UIImage(named:menuItemsImages[indexPath.row])
-            
+            cell.lblTheme.text = isDarkModeEnabled ?  "Dark" : "Light"
+            cell.delegate = self
             cell.selectionStyle = .none
             return cell
         }
@@ -58,6 +90,7 @@ class DrawerTVC: UITableViewController {
             return cell
         }
     }
+  
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -100,7 +133,6 @@ class DrawerTVC: UITableViewController {
             
             view.window?.layer.add(transition, forKey: kCATransition)
             
-//            viewController.modalTransitionStyle = .
             viewController.modalPresentationStyle = .fullScreen
             present(viewController, animated: false, completion: nil)
         }
@@ -122,5 +154,12 @@ class DrawerTVC: UITableViewController {
         if let window = UIApplication.shared.windows.first {
             window.overrideUserInterfaceStyle = isDarkModeEnabled ? .dark : .light
         }
+    }
+}
+
+extension DrawerTVC: swithcControlDelegate {
+    func switchTapped(_ sender: Any) {
+        changeTheme()
+        self.tableView.reloadData()
     }
 }

@@ -114,6 +114,38 @@
             endingLineNumber = "68"
             landmarkName = "handleLabelTap(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EE98EEE4-2462-45C1-A01F-5AB5AA6E23D9 - 44cc3be97c774e78"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BizziCall.PermissionVC.handleLabelTap(__C.UITapGestureRecognizer) -&gt; ()"
+                  moduleName = "BizziCall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmadqasim/Documents/SD/BizziCall/BizziCall/Authentication/PermissionVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "972">
+               </Location>
+               <Location
+                  uuid = "EE98EEE4-2462-45C1-A01F-5AB5AA6E23D9 - 44cc3be97c774e78"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BizziCall.PermissionVC.handleLabelTap(__C.UITapGestureRecognizer) -&gt; ()"
+                  moduleName = "BizziCall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmadqasim/Documents/SD/BizziCall/BizziCall/Authentication/PermissionVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "1394">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
