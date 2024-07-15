@@ -34,7 +34,7 @@ class CoreDataManager {
             contact.firstName = cnContact.givenName
             contact.lastName = cnContact.familyName
             if let phoneNumber = cnContact.phoneNumbers.first?.value.stringValue {
-                contact.phoneNumber = phoneNumber
+                contact.phoneNumber = phoneNumber.trimmingCharacters(in: .whitespacesAndNewlines)
             }
         }
         
@@ -95,7 +95,7 @@ class CoreDataManager {
                     entity.countryCode = contactData["countryCode"] as? String ?? ""
                     entity.currentStatusMessage = contactData["currentStatusMessage"] as? String ?? ""
                     entity.name = contactData["name"] as? String ?? ""
-                    entity.number = contactData["number"] as? String ?? ""
+                    entity.number = (contactData["number"] as? String ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
                     entity.pushKey = contactData["pushKey"] as? String ?? ""
                     entity.userId = userId
                     entity.fcmToken = contactData["fcmToken"] as? String ?? ""

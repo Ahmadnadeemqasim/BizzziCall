@@ -33,7 +33,6 @@ class SignupVC: UIViewController {
                                              "PK": "## ### #######"]
 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-
     }
   
     @IBAction func btnSignUpTapped(sender: UIButton) {

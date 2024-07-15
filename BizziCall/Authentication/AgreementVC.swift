@@ -48,10 +48,6 @@ class AgreementVC: UIViewController {
             showAlert(message: "You must have to agree with terms and condions to continue")
         } else {
             checkContactsPermission()
-//            if let nextVC = storyboard?.instantiateViewController(withIdentifier: "SignupVC") as? SignupVC {
-//                nextVC.modalPresentationStyle = .fullScreen
-//                present(nextVC, animated: true)
-//            }
         }
 
     }
@@ -86,7 +82,7 @@ class AgreementVC: UIViewController {
         // Add attributes to the entire string
         attributedString.addAttributes([
             .font: UIFont.systemFont(ofSize: 16),
-            .foregroundColor: UIColor.black,
+            .foregroundColor: UIColor.buttonText,
             .paragraphStyle: paragraphStyle
         ], range: NSRange(location: 0, length: attributedString.length))
         
@@ -139,7 +135,6 @@ class AgreementVC: UIViewController {
         vwCard.layer.shadowPath = shadowPath.cgPath
     }
 
-    
     func setupGestures() {
         let privacyPolicyTapGesture = UITapGestureRecognizer(target: self, action: #selector(privacyPolicyTapped))
         vwPRivacyPolicy?.addGestureRecognizer(privacyPolicyTapGesture)
@@ -150,8 +145,6 @@ class AgreementVC: UIViewController {
         vwWebLLink?.isUserInteractionEnabled = true
     }
 
-    
-    
     @objc func privacyPolicyTapped() {
         openWebView(urlString: "https://www.google.com")
     }
@@ -160,15 +153,12 @@ class AgreementVC: UIViewController {
         openWebView(urlString: "https://www.google.com")
     }
 
-    
     func openWebView(urlString: String) {
         guard let url = URL(string: urlString) else { return }
         let webViewVC = WebViewController()
         webViewVC.url = url
         present(webViewVC, animated: true, completion: nil)
     }
-    
-    
     
     func checkContactsPermission() {
         let store = CNContactStore()

@@ -12,17 +12,10 @@ class DrawerTVC: UITableViewController {
     
     @IBOutlet weak var vwRemoveAccount: UIView!
     
+    let halfSizeTransitioningDelegate = HalfSizeTransitioningDelegate()
     private var sideMenuViewController: DrawerTVC!
     private var isSideMenuOpen = false
-    private var isDarkModeEnabled: Bool {
-        get {
-            return UserDefaults.standard.bool(forKey: "isDarkModeEnabled")
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: "isDarkModeEnabled")
-        }
-    }
-
+    private var isDarkModeEnabled: Bool = false
     
     let menuItems = ["Status", "Contacts", "History", "Change Number", "Theme"]
     let menuItemsImages = ["status","contacts", "history", "changeNumber","theme"]// Example items
@@ -32,6 +25,8 @@ class DrawerTVC: UITableViewController {
         setupGesture()
         setupTableView()
         checkDarKMode()
+        isSideMenuOpen = true
+//        isDarkModeEnabled =  UserDefaults.standard.bool(forKey: "isDarkModeEnabled")
         overrideUserInterfaceStyle = isDarkModeEnabled ? .dark : .light
     }
     
@@ -52,8 +47,6 @@ class DrawerTVC: UITableViewController {
         vwRemoveAccount?.isUserInteractionEnabled = true
     }
     
-    
-    
     func setupTableView() {
         self.tableView.register(UINib(nibName: "MenuItemCell", bundle: nil), forCellReuseIdentifier: "MenuItemCell")
         self.tableView.register(UINib(nibName: "ChangeThemeCell", bundle: nil), forCellReuseIdentifier: "ChangeThemeCell")
@@ -62,8 +55,6 @@ class DrawerTVC: UITableViewController {
     @objc func removeAccountTapped() {
         presentHalfScreenViewController()
     }
-    
-    let halfSizeTransitioningDelegate = HalfSizeTransitioningDelegate()
     
     func presentHalfScreenViewController() {
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
@@ -76,48 +67,9 @@ class DrawerTVC: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80.0
-    }
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menuItems.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 4 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ChangeThemeCell", for: indexPath) as! ChangeThemeCell
-            cell.lblMenuItem?.text = menuItems[indexPath.row]
-            cell.imgMenuItem?.image = UIImage(named:menuItemsImages[indexPath.row])
-            
-            cell.lblTheme.text = isDarkModeEnabled ?  "Dark" : "Light"
-            cell.scTheme.onTintColor = .switchTint
-            
-//            cell.scTheme.tintColor = isDarkModeEnabled ? .gradientEnd : .appBasic
-            cell.scTheme.thumbTintColor = .switchThumb // isDarkModeEnabled ? .appBasic : .gradientStart
-            cell.delegate = self
-            cell.selectionStyle = .none
-            return cell
-        }
-        else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MenuItemCell", for: indexPath) as! MenuItemCell
-            cell.lblMenuItem?.text = menuItems[indexPath.row]
-            cell.imgMenuItem?.image = UIImage(named:menuItemsImages[indexPath.row])
-            
-            cell.selectionStyle = .none
-            return cell
-        }
-    }
-  
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        navigateToViewController(at: indexPath.row)
-    }
-    
     private func navigateToViewController(at index: Int) {
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         var viewController: UIViewController?
-        
         
         switch menuItems[index] {
         case "Status":
@@ -131,13 +83,10 @@ class DrawerTVC: UITableViewController {
         case "Social Notifications":
             viewController = storyboard.instantiateViewController(withIdentifier: "NotificationVC")
         case "Theme":
-            viewController = navigationController?.viewControllers[1]
-            changeTheme()
+            print("theme clicked")
         default:
             break
         }
-        
-        
         
         if let viewController = viewController {
             navigationController?.popToRootViewController(animated: false)
@@ -159,6 +108,7 @@ class DrawerTVC: UITableViewController {
             parentVC.dismissSideMenu(sideMenu: self)
         }
     }
+    
     func changeTheme() {
         isDarkModeEnabled.toggle()
         
@@ -167,7 +117,7 @@ class DrawerTVC: UITableViewController {
         } else {
             overrideUserInterfaceStyle = .light
         }
-//        toggleSideMenu()
+        
         if let window = UIApplication.shared.windows.first {
             window.overrideUserInterfaceStyle = isDarkModeEnabled ? .dark : .light
         }
@@ -187,6 +137,7 @@ class DrawerTVC: UITableViewController {
                 self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width * 0.8, height: self.view.frame.height)
             }
         }) { _ in
+            
             self.isSideMenuOpen.toggle()
         }
     }
@@ -196,6 +147,48 @@ class DrawerTVC: UITableViewController {
 extension DrawerTVC: swithcControlDelegate {
     func switchTapped(_ sender: Any) {
         changeTheme()
-        self.tableView.reloadData()
+//        self.tableView.reloadData()
+        toggleSideMenu()
     }
+}
+
+extension DrawerTVC {
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80.0
+    }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return menuItems.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 4 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ChangeThemeCell", for: indexPath) as! ChangeThemeCell
+            cell.lblMenuItem?.text = menuItems[indexPath.row]
+            cell.imgMenuItem?.image = UIImage(named:menuItemsImages[indexPath.row])
+            
+            cell.lblTheme.text = isDarkModeEnabled ?  "Dark" : "Light"
+            cell.scTheme.onTintColor = .switchTint
+            
+            //            cell.scTheme.tintColor = isDarkModeEnabled ? .gradientEnd : .appBasic
+            cell.scTheme.thumbTintColor = .switchThumb // isDarkModeEnabled ? .appBasic : .gradientStart
+            cell.delegate = self
+            cell.selectionStyle = .none
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MenuItemCell", for: indexPath) as! MenuItemCell
+            cell.lblMenuItem?.text = menuItems[indexPath.row]
+            cell.imgMenuItem?.image = UIImage(named:menuItemsImages[indexPath.row])
+            
+            cell.selectionStyle = .none
+            return cell
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        navigateToViewController(at: indexPath.row)
+    }
+    
 }

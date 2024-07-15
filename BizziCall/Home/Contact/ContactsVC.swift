@@ -141,7 +141,6 @@ extension ContactsVC : UITableViewDataSource, UITableViewDelegate{
         let contact = coreDataContacts[indexPath.row]
         cell.vwCallstatus.isHidden = true
         
-        // Check if the contact exists in fireBaseFetchedContacts
         if let matchedContact = fireBaseFetchedContacts.first(where: { $0.number == contact.phoneNumber }) {
             if matchedContact.appInstall {
                 cell.vwCallstatus.isHidden = false
