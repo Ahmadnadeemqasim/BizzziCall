@@ -18,8 +18,8 @@ class StatusVC: UIViewController {
     private var isSideMenuOpen = false
     var userStatus = StatusModel()
     
-    private var selectedMessageButton: UIButton?
-    private var selectedDurationButton: UIButton?
+    var selectedMessageButton: UIButton?
+    var selectedDurationButton: UIButton?
     
     var selectedMessage: String?
     var selectedDuration: String?
@@ -46,14 +46,14 @@ class StatusVC: UIViewController {
         super.viewDidLoad()
         setupButtons()
         setupSideMenu()
-        selectedMessageButton = btnRealBusy
-        selectedDurationButton = btn15Minutes
+//        selectedMessageButton = btnRealBusy
+//        selectedDurationButton = btn15Minutes
         FirebaseDatabaseManager.shared.fetchDataFromFirebase { data in
             if let data = data {
                 CoreDataManager.shared.saveDataToCoreData(data: data)
             }
         }
-        screenLoadStatus()
+//        screenLoadStatus()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,8 +87,8 @@ class StatusVC: UIViewController {
         btnRealBusy.layer.borderWidth = 1.0
         btn15Minutes.layer.borderWidth = 1.0
         btnCustomSetting.layer.borderWidth = 1.0
-        btnRealBusy.layer.borderColor = UIColor.btnBorder.cgColor
-        btn15Minutes.layer.borderColor = UIColor.btnBorder.cgColor
+//        btnRealBusy.layer.borderColor = UIColor.btnBorder.cgColor
+//        btn15Minutes.layer.borderColor = UIColor.btnBorder.cgColor
         btnCustomSetting.layer.borderColor = UIColor.buttonText.cgColor
     }
     
@@ -226,6 +226,7 @@ class StatusVC: UIViewController {
     @IBAction func btn2HourTapped(_ sender: UIButton) { }
     @IBAction func btn3HourTapped(_ sender: UIButton) { }
     @IBAction func btn4HourTapped(_ sender: UIButton) { }
+    
     @IBAction func btnCustomTapped(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         if let customSettingsVC = storyboard.instantiateViewController(withIdentifier: "CustomSettingsVC") as? CustomSettingsVC {
@@ -257,7 +258,7 @@ class StatusVC: UIViewController {
             transition.timingFunction = CAMediaTimingFunction(name: .easeIn)
             transition.type = .fade
             transition.subtype = .none
-            viewController.message = statusString
+            viewController.message = selectedMessage ?? ""
             let availabilityTime = calculateAvailabilityTime(duration: selectedDuration ?? "0")
             viewController.availableTime = availabilityTime
             view.window?.layer.add(transition, forKey: kCATransition)
@@ -267,7 +268,6 @@ class StatusVC: UIViewController {
             present(viewController, animated: false, completion: nil)
         }
     }
-    
     
     @IBAction func btnMenuTapped(_ sender: UIButton) {
         toggleSideMenu()

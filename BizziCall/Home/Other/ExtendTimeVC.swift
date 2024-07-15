@@ -41,7 +41,7 @@ class ExtendTimeVC: UIViewController {
         extendTimeView.isHidden = true
         extTimeHeightConstraint.constant = 0.0
         lblStatusEndTime.text = availableTime
-        txtStatusMessage.text = message
+        txtStatusMessage.text = "\(message) \(availableTime)"
         // Do any additional setup after loading the view.
     }
     
@@ -71,9 +71,9 @@ class ExtendTimeVC: UIViewController {
             previousButton.layer.borderColor = UIColor.clear.cgColor
         }
         
-        if selectedDurationButton != sender {
-            selectedAvailabilty = 0
-        }
+//        if selectedDurationButton != sender {
+//            selectedAvailabilty = 0
+//        }
         
         // Select the new duration button
         sender.layer.borderWidth = 1.0
@@ -95,12 +95,14 @@ class ExtendTimeVC: UIViewController {
         case btn4Hour:
             selectedDuration = "4 Hours"
         default:
-            selectedDuration = nil
+            selectedDuration = "0"
         }
         
         if let duration = selectedDuration {
             let availabilityTime = calculateAvailabilityTime(duration: duration)
-            statusString = "Driving and available at \(availabilityTime)"
+            statusString = "\(message) \(availabilityTime)"
+            txtStatusMessage.text = statusString
+            lblStatusEndTime.text = availabilityTime
         }
     }
     
@@ -131,8 +133,8 @@ class ExtendTimeVC: UIViewController {
         }
         
         // Calculate the new availability time
-        //        selectedAvailabilty += timeInterval
-        let availability = currentTime.addingTimeInterval(timeInterval)
+        selectedAvailabilty += timeInterval
+        let availability = currentTime.addingTimeInterval(selectedAvailabilty)
         
         // Format the availability time
         return dateFormatter.string(from: availability)

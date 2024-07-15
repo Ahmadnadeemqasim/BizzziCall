@@ -48,7 +48,8 @@ class CustomSettingsVC: UIViewController, UITextViewDelegate {
         
         txtFieldToHour.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         txtFieldToMinutes.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-
+        txtFieldStatus.isEnabled = false
+        txtFieldStatus.isUserInteractionEnabled = false
         
         // Add target actions for editingDidEnd to validate the inputs
         txtFieldToHour.delegate = self
@@ -110,6 +111,13 @@ class CustomSettingsVC: UIViewController, UITextViewDelegate {
 
     
     @IBAction func btnDoneTapped(_ sender: UIButton){
+        
+        if checkValidation() {
+            handleNavigation()
+        }
+    }
+    
+    func handleNavigation() {
         let message = txtViewCustomeMessage.text
         let fromHour = Int(txtFieldFromHour.text ?? "0") ?? 0
         let fromMinute = Int(txtFieldFromMinutes.text ?? "0") ?? 0
@@ -127,9 +135,25 @@ class CustomSettingsVC: UIViewController, UITextViewDelegate {
         if let statusVC = self.navigationController?.viewControllers.first(where: { $0 is StatusVC }) as? StatusVC {
             statusVC.selectedMessage = message
             statusVC.selectedDuration = duration
+            statusVC.selectedMessageButton  = nil
+            statusVC.selectedDurationButton =  nil
+            
         }
         
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func checkValidation() -> Bool {
+        if txtViewCustomeMessage.text.isEmpty {
+            showAlert(message: "Please enter custom message")
+            return false
+        }
+        if (txtFieldToHour.text == "") {
+            showAlert(message: "Please enter custom time")
+            return false
+        }
+        
+        return true
     }
 
     @IBAction func btnBackTapped(_ sender: UIButton){
@@ -145,6 +169,14 @@ class CustomSettingsVC: UIViewController, UITextViewDelegate {
             
             self.navigationController?.pushViewController(drawerVC, animated: true)
         }
+    }
+    
+    private func showAlert(message: String) {
+        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
+            
+        }))
+        present(alertController, animated: true, completion: nil)
     }
 }
 

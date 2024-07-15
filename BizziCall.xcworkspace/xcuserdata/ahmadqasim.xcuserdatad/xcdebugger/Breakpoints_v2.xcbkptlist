@@ -56,7 +56,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "58CA1A44-1DA4-41F1-97EF-9970C965AFCF"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BizziCall/Manager/FireBaseManager.swift"
@@ -238,6 +238,53 @@
             endingLineNumber = "148"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3746F2D7-0229-4638-B99B-6AB1EA33ECE0 - c7e3030350210c20"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BizziCall.ContactsVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "BizziCall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmadqasim/Documents/SD/BizziCall/BizziCall/Home/Contact/ContactsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "861">
+               </Location>
+               <Location
+                  uuid = "3746F2D7-0229-4638-B99B-6AB1EA33ECE0 - c7e3030350210c20"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BizziCall.ContactsVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "BizziCall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmadqasim/Documents/SD/BizziCall/BizziCall/Home/Contact/ContactsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "1098">
+               </Location>
+               <Location
+                  uuid = "3746F2D7-0229-4638-B99B-6AB1EA33ECE0 - 575e65b503e3e7ba"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (BizziCall.UserContacts) -&gt; Swift.Bool in BizziCall.ContactsVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "BizziCall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmadqasim/Documents/SD/BizziCall/BizziCall/Home/Contact/ContactsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "74">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -284,6 +331,118 @@
                   startingLineNumber = "37"
                   endingLineNumber = "37"
                   offsetFromSymbolStart = "1260">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "92DB6A76-492C-443C-8CC5-255DB6354637"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BizziCall/Home/Other/ExtendTimeVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "handleDurationButton(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "92DB6A76-492C-443C-8CC5-255DB6354637 - 253f659c2dbbca94"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BizziCall.ExtendTimeVC.handleDurationButton(__C.UIButton) -&gt; ()"
+                  moduleName = "BizziCall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmadqasim/Documents/SD/BizziCall/BizziCall/Home/Other/ExtendTimeVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "4164">
+               </Location>
+               <Location
+                  uuid = "92DB6A76-492C-443C-8CC5-255DB6354637 - 253f659c2dbbca94"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BizziCall.ExtendTimeVC.handleDurationButton(__C.UIButton) -&gt; ()"
+                  moduleName = "BizziCall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmadqasim/Documents/SD/BizziCall/BizziCall/Home/Other/ExtendTimeVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "4278">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8FB40CE0-F631-47A7-A9E8-F5AAFAFBB71A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BizziCall/Home/Other/ExtendTimeVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "calculateAvailabilityTime(duration:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0545A55C-FD8D-47C2-B81F-78FE1707B8BB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BizziCall/Home/Other/ExtendTimeVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "calculateAvailabilityTime(duration:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0545A55C-FD8D-47C2-B81F-78FE1707B8BB - 88c7e59e1a9fc560"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BizziCall.ExtendTimeVC.calculateAvailabilityTime(duration: Swift.String) -&gt; Swift.String"
+                  moduleName = "BizziCall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmadqasim/Documents/SD/BizziCall/BizziCall/Home/Other/ExtendTimeVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "136"
+                  endingLineNumber = "136"
+                  offsetFromSymbolStart = "1738">
+               </Location>
+               <Location
+                  uuid = "0545A55C-FD8D-47C2-B81F-78FE1707B8BB - 88c7e59e1a9fc560"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BizziCall.ExtendTimeVC.calculateAvailabilityTime(duration: Swift.String) -&gt; Swift.String"
+                  moduleName = "BizziCall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmadqasim/Documents/SD/BizziCall/BizziCall/Home/Other/ExtendTimeVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "136"
+                  endingLineNumber = "136"
+                  offsetFromSymbolStart = "1745">
                </Location>
             </Locations>
          </BreakpointContent>

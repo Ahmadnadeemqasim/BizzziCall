@@ -18,8 +18,6 @@ class AgreementVC: UIViewController {
     @IBOutlet weak var btnContinue: UIButton!
     var isChecked: Bool = false
     
-    
-//    @IBOutlet weak var lblAllow: UILabel!
     @IBOutlet weak var agreementLabel: UILabel!
     @IBOutlet weak var lblPRivacyPolicy: UIView!
     @IBOutlet weak var lbWebLLink: UIView!
@@ -39,8 +37,6 @@ class AgreementVC: UIViewController {
         let imageString = isChecked ? "checkmark.square" : "square"
         let image = UIImage(systemName: imageString)
         btnCheckBox.setImage(image, for: .normal)
-//        btnContinue.isEnabled = isChecked
-    
     }
     
     @IBAction func btnContinue(_ sennder: UIButton) {
@@ -51,6 +47,7 @@ class AgreementVC: UIViewController {
         }
 
     }
+    
     private func showAlert(message: String) {
         let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
@@ -58,7 +55,6 @@ class AgreementVC: UIViewController {
         }))
         present(alertController, animated: true, completion: nil)
     }
-    
 
     func setupAgreementText() {
         let introText = """
