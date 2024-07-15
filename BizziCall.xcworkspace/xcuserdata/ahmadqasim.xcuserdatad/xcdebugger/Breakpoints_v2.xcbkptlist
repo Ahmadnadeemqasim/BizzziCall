@@ -8,14 +8,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "25C4EFBE-29C5-4D50-9C99-A64F088203C7"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BizziCall/Home/Contact/ContactsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
             <Locations>
@@ -218,42 +218,10 @@
             filePath = "BizziCall/Home/Contact/ContactsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D5BFDC38-AE48-4479-8E23-EB44EB61B347 - c7e3030350210f83"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BizziCall.ContactsVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "BizziCall"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmadqasim/Documents/SD/BizziCall/BizziCall/Home/Contact/ContactsVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "145"
-                  endingLineNumber = "145"
-                  offsetFromSymbolStart = "1116">
-               </Location>
-               <Location
-                  uuid = "D5BFDC38-AE48-4479-8E23-EB44EB61B347 - c7e3030350210f83"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BizziCall.ContactsVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "BizziCall"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmadqasim/Documents/SD/BizziCall/BizziCall/Home/Contact/ContactsVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "145"
-                  endingLineNumber = "145"
-                  offsetFromSymbolStart = "1204">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -266,100 +234,56 @@
             filePath = "BizziCall/Home/Contact/ContactsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F906E601-4FD9-479A-BF99-F63BC18F078F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BizziCall/Manager/CoreDataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "saveContactsToCoreData(contacts:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "3746F2D7-0229-4638-B99B-6AB1EA33ECE0 - c7e3030350210fac"
+                  uuid = "F906E601-4FD9-479A-BF99-F63BC18F078F - 6ee1b858e8e76360"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "BizziCall.ContactsVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  symbolName = "BizziCall.CoreDataManager.saveContactsToCoreData(contacts: Swift.Array&lt;__C.CNContact&gt;) -&gt; ()"
                   moduleName = "BizziCall"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmadqasim/Documents/SD/BizziCall/BizziCall/Home/Contact/ContactsVC.swift"
+                  urlString = "file:///Users/ahmadqasim/Documents/SD/BizziCall/BizziCall/Manager/CoreDataManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "144"
-                  endingLineNumber = "144"
-                  offsetFromSymbolStart = "861">
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "1287">
                </Location>
                <Location
-                  uuid = "3746F2D7-0229-4638-B99B-6AB1EA33ECE0 - c7e3030350210fac"
+                  uuid = "F906E601-4FD9-479A-BF99-F63BC18F078F - 6ee1b858e8e76360"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "BizziCall.ContactsVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  symbolName = "BizziCall.CoreDataManager.saveContactsToCoreData(contacts: Swift.Array&lt;__C.CNContact&gt;) -&gt; ()"
                   moduleName = "BizziCall"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmadqasim/Documents/SD/BizziCall/BizziCall/Home/Contact/ContactsVC.swift"
+                  urlString = "file:///Users/ahmadqasim/Documents/SD/BizziCall/BizziCall/Manager/CoreDataManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "144"
-                  endingLineNumber = "144"
-                  offsetFromSymbolStart = "1098">
-               </Location>
-               <Location
-                  uuid = "3746F2D7-0229-4638-B99B-6AB1EA33ECE0 - 575e65b503e3e436"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (BizziCall.UserContacts) -&gt; Swift.Bool in BizziCall.ContactsVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "BizziCall"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmadqasim/Documents/SD/BizziCall/BizziCall/Home/Contact/ContactsVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "144"
-                  endingLineNumber = "144"
-                  offsetFromSymbolStart = "74">
-               </Location>
-               <Location
-                  uuid = "3746F2D7-0229-4638-B99B-6AB1EA33ECE0 - c7e3030350210fac"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BizziCall.ContactsVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "BizziCall"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmadqasim/Documents/SD/BizziCall/BizziCall/Home/Contact/ContactsVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "144"
-                  endingLineNumber = "144"
-                  offsetFromSymbolStart = "908">
-               </Location>
-               <Location
-                  uuid = "3746F2D7-0229-4638-B99B-6AB1EA33ECE0 - c7e3030350210fac"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BizziCall.ContactsVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "BizziCall"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmadqasim/Documents/SD/BizziCall/BizziCall/Home/Contact/ContactsVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "144"
-                  endingLineNumber = "144"
-                  offsetFromSymbolStart = "1188">
-               </Location>
-               <Location
-                  uuid = "3746F2D7-0229-4638-B99B-6AB1EA33ECE0 - 575e65b503e3e436"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (BizziCall.UserContacts) -&gt; Swift.Bool in BizziCall.ContactsVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "BizziCall"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmadqasim/Documents/SD/BizziCall/BizziCall/Home/Contact/ContactsVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "144"
-                  endingLineNumber = "144"
-                  offsetFromSymbolStart = "48">
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "1260">
                </Location>
             </Locations>
          </BreakpointContent>

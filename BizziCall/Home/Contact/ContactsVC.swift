@@ -128,12 +128,16 @@ class ContactsVC: UIViewController {
         }
     }
 
-
 }
+
 extension ContactsVC : UITableViewDataSource, UITableViewDelegate{
     // UITableViewDataSource Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return coreDataContacts.count
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 66.0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -453,7 +453,6 @@
 				D941EFF22C145B730078A96E /* SocialMedia */,
 				D941EFEC2C145B730078A96E /* Contact */,
 				D941F0032C145B730078A96E /* SetStatus */,
-				D941F0002C145B730078A96E /* Permission */,
 				D941EFFB2C145B730078A96E /* History */,
 			);
 			path = Home;
@@ -496,13 +495,6 @@
 				D98E88532C30213900885441 /* Cell */,
 			);
 			path = History;
-			sourceTree = "<group>";
-		};
-		D941F0002C145B730078A96E /* Permission */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Permission;
 			sourceTree = "<group>";
 		};
 		D941F0032C145B730078A96E /* SetStatus */ = {

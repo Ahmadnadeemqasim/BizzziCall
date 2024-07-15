@@ -34,7 +34,7 @@ class CoreDataManager {
             contact.firstName = cnContact.givenName
             contact.lastName = cnContact.familyName
             if let phoneNumber = cnContact.phoneNumbers.first?.value.stringValue {
-                contact.phoneNumber = phoneNumber.trimmingCharacters(in: .whitespacesAndNewlines)
+                contact.phoneNumber = phoneNumber.replacingOccurrences(of: " ", with: "") //.trimmingCharacters(in: .whitespacesAndNewlines)
             }
         }
         
