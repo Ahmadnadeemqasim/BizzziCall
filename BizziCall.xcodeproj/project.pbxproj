@@ -73,8 +73,6 @@
 		D941F02D2C1462F50078A96E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D941F02C2C1462F50078A96E /* GoogleService-Info.plist */; };
 		D943393D2C165CDD006B7C83 /* ChangeThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D943393B2C165CDD006B7C83 /* ChangeThemeCell.swift */; };
 		D943393E2C165CDD006B7C83 /* ChangeThemeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D943393C2C165CDD006B7C83 /* ChangeThemeCell.xib */; };
-		D986AB772C43191F00FB0977 /* LogoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986AB752C43191F00FB0977 /* LogoutCell.swift */; };
-		D986AB782C43191F00FB0977 /* LogoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D986AB762C43191F00FB0977 /* LogoutCell.xib */; };
 		D986AB7A2C4397B300FB0977 /* RemoveAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986AB792C4397B300FB0977 /* RemoveAccountVC.swift */; };
 		D986AB7C2C443FDF00FB0977 /* HalfPresentationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986AB7B2C443FDF00FB0977 /* HalfPresentationVC.swift */; };
 		D98E884F2C2F687400885441 /* SegmentGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E884E2C2F687400885441 /* SegmentGradient.swift */; };
@@ -182,8 +180,6 @@
 		D941F02C2C1462F50078A96E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D943393B2C165CDD006B7C83 /* ChangeThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeThemeCell.swift; sourceTree = "<group>"; };
 		D943393C2C165CDD006B7C83 /* ChangeThemeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeThemeCell.xib; sourceTree = "<group>"; };
-		D986AB752C43191F00FB0977 /* LogoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutCell.swift; sourceTree = "<group>"; };
-		D986AB762C43191F00FB0977 /* LogoutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoutCell.xib; sourceTree = "<group>"; };
 		D986AB792C4397B300FB0977 /* RemoveAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveAccountVC.swift; sourceTree = "<group>"; };
 		D986AB7B2C443FDF00FB0977 /* HalfPresentationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfPresentationVC.swift; sourceTree = "<group>"; };
 		D98E884E2C2F687400885441 /* SegmentGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentGradient.swift; sourceTree = "<group>"; };
@@ -525,8 +521,6 @@
 				D941EFE92C145B730078A96E /* MenuItemCell.xib */,
 				D943393B2C165CDD006B7C83 /* ChangeThemeCell.swift */,
 				D943393C2C165CDD006B7C83 /* ChangeThemeCell.xib */,
-				D986AB752C43191F00FB0977 /* LogoutCell.swift */,
-				D986AB762C43191F00FB0977 /* LogoutCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -716,7 +710,6 @@
 				D941EF882C145ACE0078A96E /* Assets.xcassets in Resources */,
 				D941EFCA2C145B1C0078A96E /* roboto_medium.ttf in Resources */,
 				D941F0082C145B730078A96E /* MenuItemCell.xib in Resources */,
-				D986AB782C43191F00FB0977 /* LogoutCell.xib in Resources */,
 				D941EFDD2C145B1C0078A96E /* roboto_light_italic.ttf in Resources */,
 				D941EFD82C145B1C0078A96E /* roboto_black.ttf in Resources */,
 				D941EFC92C145B1C0078A96E /* lato_italic.ttf in Resources */,
@@ -863,7 +856,6 @@
 				D98E88522C2FEBCD00885441 /* CustomSettings + UI.swift in Sources */,
 				D943393D2C165CDD006B7C83 /* ChangeThemeCell.swift in Sources */,
 				D941F00C2C145B730078A96E /* ContactCell.swift in Sources */,
-				D986AB772C43191F00FB0977 /* LogoutCell.swift in Sources */,
 				D941F00E2C145B730078A96E /* ExtendTimeVC.swift in Sources */,
 				D941F00A2C145B730078A96E /* SuccessVC.swift in Sources */,
 				D941F01E2C145B730078A96E /* CustomSettingsVC.swift in Sources */,

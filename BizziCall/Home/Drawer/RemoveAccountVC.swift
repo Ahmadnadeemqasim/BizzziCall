@@ -52,11 +52,10 @@ class RemoveAccountVC: UIViewController {
         UserDefaults.standard.set(false, forKey: "isLoggedIn")
         UserDefaults.standard.removeObject(forKey: "currentUserNumber")
         UserDefaults.standard.removeObject(forKey: "authVerificationID")
-        UserDefaults.standard.removeObject(forKey: "currentUserNumber")
-        UserDefaults.standard.set(false, forKey: "permissionsGranted")
+//        UserDefaults.standard.set(false, forKey: "permissionsGranted")
         
-        let storyboard = UIStoryboard(name: "Home", bundle: nil)
-        if let removeAccountVC = storyboard.instantiateViewController(withIdentifier: "PermissionVC") as?  PermissionVC{
+        let storyboard = UIStoryboard(name: "Authentication", bundle: nil)
+        if let removeAccountVC = storyboard.instantiateViewController(withIdentifier: "SignupVC") as?  SignupVC{
             
             let navigationController = UINavigationController(rootViewController: removeAccountVC)
             self.view.window?.rootViewController = navigationController

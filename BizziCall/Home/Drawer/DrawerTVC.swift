@@ -56,7 +56,6 @@ class DrawerTVC: UITableViewController {
     
     func setupTableView() {
         self.tableView.register(UINib(nibName: "MenuItemCell", bundle: nil), forCellReuseIdentifier: "MenuItemCell")
-        self.tableView.register(UINib(nibName: "LogoutCell", bundle: nil), forCellReuseIdentifier: "LogoutCell")
         self.tableView.register(UINib(nibName: "ChangeThemeCell", bundle: nil), forCellReuseIdentifier: "ChangeThemeCell")
     }
     
