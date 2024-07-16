@@ -30,6 +30,10 @@ class DrawerTVC: UITableViewController {
         overrideUserInterfaceStyle = isDarkModeEnabled ? .dark : .light
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+////        isDarkModeEnabled = UserDefaults.standard.bool(forKey: "isDarkMode")
+//        checkDarKMode()
+//    }
     func checkDarKMode() {
         if traitCollection.userInterfaceStyle == .dark {
             print("Dark mode is enabled")
@@ -118,6 +122,7 @@ class DrawerTVC: UITableViewController {
             overrideUserInterfaceStyle = .light
         }
         
+        UserDefaults.standard.set(isDarkModeEnabled, forKey: "isDarkMode")
         if let window = UIApplication.shared.windows.first {
             window.overrideUserInterfaceStyle = isDarkModeEnabled ? .dark : .light
         }
@@ -131,10 +136,10 @@ class DrawerTVC: UITableViewController {
         UIView.animate(withDuration: 0.3, animations: {
             if self.isSideMenuOpen {
                 // Hide side menu
-                self.view.frame = CGRect(x: -self.view.frame.width, y: 0, width: self.view.frame.width * 0.8, height: self.view.frame.height)
+                self.view.frame = CGRect(x: -self.view.frame.width, y: 0, width: self.view.frame.width * 0, height: self.view.frame.height)
             } else {
                 // Show side menu
-                self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width * 0.8, height: self.view.frame.height)
+                self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width * 0, height: self.view.frame.height)
             }
         }) { _ in
             
@@ -147,7 +152,7 @@ class DrawerTVC: UITableViewController {
 extension DrawerTVC: swithcControlDelegate {
     func switchTapped(_ sender: Any) {
         changeTheme()
-//        self.tableView.reloadData()
+        self.tableView.reloadData()
         toggleSideMenu()
     }
 }

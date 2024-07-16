@@ -58,7 +58,7 @@ class StatusVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        setupSideMenu()
         if let message = selectedMessage {
             let availabilityTime = calculateAvailabilityTime(duration: selectedDuration ?? "0")
             txtStatusMessage.text = "\(message) and available at \(availabilityTime)"
@@ -84,8 +84,8 @@ class StatusVC: UIViewController {
             button.addTarget(self, action: #selector(handleButtonTap(_:)), for: .touchUpInside)
         }
         
-        btnRealBusy.layer.borderWidth = 1.0
-        btn15Minutes.layer.borderWidth = 1.0
+//        btnRealBusy.layer.borderWidth = 1.0
+//        btn15Minutes.layer.borderWidth = 1.0
         btnCustomSetting.layer.borderWidth = 1.0
 //        btnRealBusy.layer.borderColor = UIColor.btnBorder.cgColor
 //        btn15Minutes.layer.borderColor = UIColor.btnBorder.cgColor
